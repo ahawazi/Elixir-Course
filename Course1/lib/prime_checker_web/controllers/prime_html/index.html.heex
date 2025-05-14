@@ -1,0 +1,12 @@
+<h1>بررسی اول بودن عدد</h1>
+
+<form action="/check" method="post">
+  <input type="hidden" name="_csrf_token" value={get_csrf_token()} />
+  <input type="number" name="number" required />
+  <button type="submit">بررسی کن</button>
+</form>
+
+<%= if assigns[:number] do %>
+  <p>عدد وارد شده: <%= @number %></p>
+  <p><strong><%= @result %></strong></p>
+<% end %>
